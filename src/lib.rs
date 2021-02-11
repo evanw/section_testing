@@ -263,7 +263,7 @@ macro_rules! enable_sections {
 #[macro_export]
 macro_rules! section {
   ($name:expr) => {{
-    assert!($crate::is_running(), "\"section!(...)\" must be called from inside \"enable_sections! { ... }\"");
+    assert!($crate::is_running(), "{}", "\"section!(...)\" must be called from inside \"enable_sections! { ... }\"");
     $crate::enter_section($name, file!(), line!())
   }}
 }
