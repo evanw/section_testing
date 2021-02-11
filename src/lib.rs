@@ -175,7 +175,7 @@ impl Drop for DropHandler {
         if !current.is_empty() {
           let mut buffer = "---- the failure was inside these sections ----\n".to_owned();
           for (i, (section, _)) in current.iter().enumerate() {
-            write!(&mut buffer, "{: >3}) {:?} at {}:{}\n",
+            writeln!(&mut buffer, "{: >3}) {:?} at {}:{}",
               i, section.name, section.file, section.line).unwrap();
           }
           eprint!("{}", buffer);
