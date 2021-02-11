@@ -152,7 +152,7 @@ impl Drop for DropHandler {
         // If so, add newly-discovered sections to the queue
         for section in &new {
           let mut path = r.current.clone();
-          let mut count = r.current.values().filter(|x| x.should_enter).count();
+          let count = r.current.values().filter(|x| x.should_enter).count();
           for s in &new {
             path.insert(*s, Entry {
               should_enter: s == section,
