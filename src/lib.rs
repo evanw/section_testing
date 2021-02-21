@@ -152,7 +152,7 @@ impl Drop for DropHandler {
         // If so, add newly-discovered sections to the queue
         for section in &new {
           let mut path = r.current.clone();
-          let mut count = r.current.values().filter(|x| x.should_enter).count();
+          let count = r.current.values().filter(|x| x.should_enter).count();
           for s in &new {
             path.insert(*s, Entry {
               should_enter: s == section,
@@ -175,7 +175,7 @@ impl Drop for DropHandler {
         if !current.is_empty() {
           let mut buffer = "---- the failure was inside these sections ----\n".to_owned();
           for (i, (section, _)) in current.iter().enumerate() {
-            write!(&mut buffer, "{: >3}) {:?} at {}:{}\n",
+            writeln!(&mut buffer, "{: >3}) {:?} at {}:{}",
               i, section.name, section.file, section.line).unwrap();
           }
           eprint!("{}", buffer);
