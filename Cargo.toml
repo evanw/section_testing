@@ -1,6 +1,6 @@
 [package]
 name = "section_testing"
-version = "0.0.4"
+version = "0.0.5"
 description = "A library for section-style testing"
 license = "MIT"
 authors = ["Evan Wallace"]

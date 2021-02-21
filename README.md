@@ -14,7 +14,7 @@ following dependency to your `Cargo.toml`:
 
 ```
 [dependencies]
-section_testing = "0.0.4"
+section_testing = "0.0.5"
 ```
 
 Read the example below to learn how to use it.
